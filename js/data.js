@@ -1,0 +1,451 @@
+/**
+ * Base de Dados de Veículos - Gaúcho Veículos
+ * Contém o inventário completo de carros novos (0km) e seminovos certificados.
+ */
+
+const VEHICLES_DATA = [
+  {
+    id: "gaucho-001",
+    name: "Toyota Hilux SRX Plus 4x4",
+    brand: "Toyota",
+    model: "Hilux SRX Plus",
+    year: "2024 / 2024",
+    condition: "novo", // "novo" ou "seminovo"
+    category: "pickup",
+    price: 334990,
+    oldPrice: 349900,
+    mileage: 0,
+    fuel: "Diesel",
+    transmission: "Automático (6 marchas)",
+    engine: "2.8 Turbo Diesel 204cv",
+    color: "Prata Névoa",
+    plateEnd: "0",
+    featured: true,
+    badges: ["0km Pronta Entrega", "Garantia 5 Anos", "Destaque"],
+    images: [
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Tração 4x4 com Reduzida",
+      "Bancos em Couro Ventilados",
+      "Central Multimídia JBL 9\" com Apple CarPlay e Android Auto",
+      "Alerta de Colisão Frontal (TSS)",
+      "Piloto Automático Adaptativo (ACC)",
+      "Câmera 360 Graus",
+      "Faróis Full LED",
+      "Sete Airbags"
+    ],
+    description: "A picape mais consagrada do Brasil na sua versão topo de linha SRX Plus. Unidade 0km a pronta entrega, com o novo pacote de suspensão alargada e acabamento premium JBL."
+  },
+  {
+    id: "gaucho-002",
+    name: "BMW 320i M Sport 2.0 Turbo",
+    brand: "BMW",
+    model: "320i M Sport",
+    year: "2023 / 2023",
+    condition: "seminovo",
+    category: "sedan",
+    price: 289900,
+    oldPrice: 305000,
+    mileage: 14500,
+    fuel: "Flex",
+    transmission: "Automático (8 marchas)",
+    engine: "2.0 TwinPower Turbo 184cv",
+    color: "Azul Portimao",
+    plateEnd: "8",
+    featured: true,
+    badges: ["Único Dono", "Laudo 100% Aprovado", "Revisado na Concessionária"],
+    images: [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Pacote M Sport Completo",
+      "Teto Solar Elétrico",
+      "Painel Curvo BMW Live Cockpit Plus",
+      "Faróis Full LED Adaptativos",
+      "Sistema de Som Harman Kardon",
+      "Bancos Esportivos M em Couro Cognac",
+      "Assistente de Estacionamento Reversing Assistant",
+      "Rodas aro 19 M"
+    ],
+    description: "Sedução, requinte e esportividade alemã. Carro impecável de único dono, sem detalhes, com todas as revisões feitas em concessionária BMW e garantia estendida de fábrica."
+  },
+  {
+    id: "gaucho-003",
+    name: "Jeep Compass Limited T270",
+    brand: "Jeep",
+    model: "Compass Limited",
+    year: "2024 / 2024",
+    condition: "novo",
+    category: "suv",
+    price: 189900,
+    oldPrice: 198000,
+    mileage: 0,
+    fuel: "Flex",
+    transmission: "Automático (6 marchas)",
+    engine: "1.3 Turbo Flex 185cv",
+    color: "Cinza Granite",
+    plateEnd: "1",
+    featured: true,
+    badges: ["0km", "Bônus de Fábrica", "Taxa Zero"],
+    images: [
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Painel Digital 10.25\"",
+      "Multimídia 10.1\" Adventure Intelligence",
+      "Bancos em Couro Marrom",
+      "Teto Solar Panorâmico Command View",
+      "Park Assist (Estacionamento Autônomo)",
+      "Alerta de Ponto Cego",
+      "Carregador por Indução",
+      "Rodas aro 19 diamantadas"
+    ],
+    description: "O SUV médio preferido dos brasileiros. Unidade 0km com teto panorâmico incluso e pacote de tecnologia completo."
+  },
+  {
+    id: "gaucho-004",
+    name: "BYD Song Plus DM-i Híbrido",
+    brand: "BYD",
+    model: "Song Plus DM-i",
+    year: "2024 / 2025",
+    condition: "novo",
+    category: "eletrico",
+    price: 239800,
+    oldPrice: null,
+    mileage: 0,
+    fuel: "Híbrido Plug-in",
+    transmission: "Automático E-CVT",
+    engine: "1.5 Híbrido Plug-in 235cv Combinados",
+    color: "Branco Neve",
+    plateEnd: "9",
+    featured: true,
+    badges: ["Híbrido Plug-in", "Autonomia 1.000km+", "Isenção de IPVA*"],
+    images: [
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Autonomia Elétrica pura de 105km",
+      "Consumo combinado de até 38km/l",
+      "Tela Giratória 15.6\" 4K",
+      "Piloto Automático Nível 2",
+      "Câmeras 360 com Visão 3D e Transparência do Chassi",
+      "Teto Solar Panorâmico Elétrico",
+      "Abertura Elétrica do Porta-malas",
+      "Garantia de 8 anos da bateria Blade"
+    ],
+    description: "O futuro da mobilidade inteligente. Excelente autonomia, conforto de padrão executivo e economia incomparável."
+  },
+  {
+    id: "gaucho-005",
+    name: "Volkswagen Nivus Highline 200 TSI",
+    brand: "Volkswagen",
+    model: "Nivus Highline",
+    year: "2023 / 2023",
+    condition: "seminovo",
+    category: "suv",
+    price: 119900,
+    oldPrice: 126900,
+    mileage: 26000,
+    fuel: "Flex",
+    transmission: "Automático (6 marchas)",
+    engine: "1.0 200 TSI Turbo 128cv",
+    color: "Cinza Moonstone",
+    plateEnd: "4",
+    featured: false,
+    badges: ["IPVA 2026 Pago", "Laudo Cautelar Aprovado", "Excelente Oportunidade"],
+    images: [
+      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Painel Active Info Display 10.25\"",
+      "VW Play 10\" com Apps Integrados",
+      "Controle Adaptativo de Velocidade (ACC)",
+      "Frenagem Autônoma de Emergência",
+      "Faróis e Lanternas Full LED",
+      "Bancos com Revestimento em Couro Bicolor",
+      "Ar Condicionado Digital Climatronic Touch"
+    ],
+    description: "Design coupé marcante, baixo consumo e altíssima segurança 5 estrelas Latin NCAP. Veículo impecável com histórico transparente."
+  },
+  {
+    id: "gaucho-006",
+    name: "Honda Civic Touring 1.5 Turbo",
+    brand: "Honda",
+    model: "Civic Touring",
+    year: "2021 / 2021",
+    condition: "seminovo",
+    category: "sedan",
+    price: 147900,
+    oldPrice: 154000,
+    mileage: 41000,
+    fuel: "Gasolina",
+    transmission: "Automático CVT (7 vel)",
+    engine: "1.5 Turbo 173cv",
+    color: "Preto Cristal",
+    plateEnd: "6",
+    featured: false,
+    badges: ["Mais Vendido", "Seminovos Gaúcho", "Garantia 1 Ano"],
+    images: [
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Teto Solar Elétrico",
+      "Sistema de Som Premium 452W com Subwoofer",
+      "Câmera LaneWatch no Retrovisor Direito",
+      "Carregador de Celular por Indução",
+      "Banco do Motorista com Ajuste Elétrico",
+      "Faróis Full LED",
+      "Controle de Tração e Estabilidade VSA"
+    ],
+    description: "A lendária geração G10 no seu ápice de tecnologia e refinamento mecânico. Estado de conservação exemplar."
+  },
+  {
+    id: "gaucho-007",
+    name: "Ford Ranger Limited V6 4x4",
+    brand: "Ford",
+    model: "Ranger Limited",
+    year: "2024 / 2024",
+    condition: "novo",
+    category: "pickup",
+    price: 319900,
+    oldPrice: 329900,
+    mileage: 0,
+    fuel: "Diesel",
+    transmission: "Automático (10 marchas)",
+    engine: "3.0 V6 Turbo Diesel 250cv",
+    color: "Laranja Terra",
+    plateEnd: "3",
+    featured: true,
+    badges: ["Motor V6 250cv", "0km Pronta Entrega", "Oferta Exclusiva"],
+    images: [
+      "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Motor V6 3.0 Diesel com 60,9 kgfm de torque",
+      "Câmbio de 10 Velocidades",
+      "Tela Vertical de 12\" com SYNC 4",
+      "Painel Digital de 12.4\"",
+      "Piloto Automático Adaptativo com Stop&Go",
+      "Assistente de Permanência em Faixa",
+      "Tração 4WD inteligente sob demanda"
+    ],
+    description: "A nova referência absoluta em picapes médias. Potência brutal do motor V6 com dirigibilidade de SUV de luxo."
+  },
+  {
+    id: "gaucho-008",
+    name: "Hyundai Creta Ultimate 2.0",
+    brand: "Hyundai",
+    model: "Creta Ultimate",
+    year: "2023 / 2024",
+    condition: "seminovo",
+    category: "suv",
+    price: 142900,
+    oldPrice: 149900,
+    mileage: 19800,
+    fuel: "Flex",
+    transmission: "Automático (6 marchas)",
+    engine: "Smartstream 2.0 Flex 167cv",
+    color: "Branco Atlas",
+    plateEnd: "5",
+    featured: false,
+    badges: ["Garantia até 2028", "Teto Solar Panorâmico", "Impecável"],
+    images: [
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Teto Solar Panorâmico com Cortina Elétrica",
+      "Ventilação no Banco do Motorista",
+      "Hyundai SmartSense (Frenagem autônoma, ACC e Faixa)",
+      "Painel Digital Supervision Cluster 7\"",
+      "Câmera de Monitoramento de Ponto Cego",
+      "Freio de Estacionamento Eletrônico com Auto Hold"
+    ],
+    description: "Conforto inigualável e pacote completo de assistência ao condutor. Único proprietário com todas as revisões periódicas."
+  },
+  {
+    id: "gaucho-009",
+    name: "Porsche Macan GTS 2.9 V6 Biturbo",
+    brand: "Porsche",
+    model: "Macan GTS",
+    year: "2022 / 2023",
+    condition: "seminovo",
+    category: "esportivo",
+    price: 689000,
+    oldPrice: 720000,
+    mileage: 18200,
+    fuel: "Gasolina",
+    transmission: "PDK Dupla Embreagem (7 vel)",
+    engine: "2.9 V6 Biturbo 440cv",
+    color: "Crayon Special Paint",
+    plateEnd: "9",
+    featured: true,
+    badges: ["Exclusivo", "440cv", "Colecionador / Impecável"],
+    images: [
+      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "0 a 100 km/h em 4.3 segundos",
+      "Suspensão Pneumática Adaptativa PASM",
+      "Pacote Sport Chrono com Seletor de Modos no Volante",
+      "Escapamento Esportivo com Válvulas Ativas",
+      "Interior GTS em Alcântara e Costuras Contrastantes",
+      "Som BOSE Surround System",
+      "Faróis PDLS Plus em LED escurecidos"
+    ],
+    description: "A essência pura de pista com a versatilidade de um SUV de luxo. Veículo com laudo Dekra impecável e garantia Porsche Approved."
+  },
+  {
+    id: "gaucho-010",
+    name: "Chevrolet Onix Premier Turbo",
+    brand: "Chevrolet",
+    model: "Onix Premier",
+    year: "2023 / 2023",
+    condition: "seminovo",
+    category: "hatch",
+    price: 89900,
+    oldPrice: 94500,
+    mileage: 28000,
+    fuel: "Flex",
+    transmission: "Automático (6 marchas)",
+    engine: "1.0 Turbo 116cv",
+    color: "Vermelho Carmim",
+    plateEnd: "2",
+    featured: false,
+    badges: ["Super Econômico", "Wi-Fi Nativo", "Entrada Facilitada"],
+    images: [
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Wi-Fi a Bordo e Sistema OnStar Integrado",
+      "Easy Park (Estacionamento Semiautônomo)",
+      "Alerta de Ponto Cego",
+      "Carregador de Celular por Indução",
+      "Bancos com Acabamento Premium Bicolor",
+      "Seis Airbags de Série",
+      "Chave Presencial com Partida por Botão"
+    ],
+    description: "O campeão de economia e conectividade. Baixo custo de manutenção, excelente valor de revenda e repleto de comodidades."
+  },
+  {
+    id: "gaucho-011",
+    name: "Fiat Strada Volcano 1.3 CVT",
+    brand: "Fiat",
+    model: "Strada Volcano",
+    year: "2024 / 2024",
+    condition: "novo",
+    category: "pickup",
+    price: 118900,
+    oldPrice: 124900,
+    mileage: 0,
+    fuel: "Flex",
+    transmission: "Automático CVT (7 marchas)",
+    engine: "1.3 Firefly 107cv",
+    color: "Cinza Silverstone",
+    plateEnd: "7",
+    featured: false,
+    badges: ["0km", "Pronta Entrega", "Trabalho & Lazer"],
+    images: [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Câmbio Automático CVT com Modo Sport e Paddle Shift",
+      "Faróis em LED",
+      "Central Multimídia 7\" Wireless CarPlay e Android",
+      "Controle Eletrônico de Tração Avançado (TC+)",
+      "Capota Marítima e Protetor de Caçamba",
+      "Câmera de Ré com Linhas Dinâmicas"
+    ],
+    description: "A picape mais vendida do Brasil agora com câmbio automático. O equilíbrio ideal entre trabalho pesado e conforto diário."
+  },
+  {
+    id: "gaucho-012",
+    name: "Audi A3 Sedan S-Line 2.0 TFSI",
+    brand: "Audi",
+    model: "A3 Sedan S-Line",
+    year: "2023 / 2023",
+    condition: "seminovo",
+    category: "sedan",
+    price: 229000,
+    oldPrice: 242000,
+    mileage: 16500,
+    fuel: "Gasolina (MHEV Híbrido Leve)",
+    transmission: "S-Tronic Dupla Embreagem (7 vel)",
+    engine: "2.0 TFSI 204cv Híbrido Leve",
+    color: "Cinza Daytona Perolizado",
+    plateEnd: "3",
+    featured: true,
+    badges: ["Híbrido Leve (MHEV)", "Pacote S-Line", "Garantia Total"],
+    images: [
+      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80"
+    ],
+    features: [
+      "Audi Virtual Cockpit Plus de 12.3\"",
+      "Faróis Full LED Matrix com Setas Dinâmicas",
+      "Sistema Híbrido Leve 48V (Alta Eficiência)",
+      "Bancos Esportivos S com Apoio Lombar Elétrico",
+      "Teto Solar Panorâmico",
+      "Audi Drive Select com 5 Modos de Condução",
+      "Rodas Audi Sport aro 18"
+    ],
+    description: "Sofisticação, precisão dinâmica e muita esportividade. Modelo com pacote visual S-Line e tecnologia híbrida leve para máxima economia."
+  }
+];
+
+const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    name: "Rodrigo Mendonça",
+    city: "Porto Alegre - RS",
+    car: "Comprou: BMW 320i M Sport",
+    rating: 5,
+    date: "Há 2 semanas",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    comment: "Atendimento impecável do início ao fim! Comprei minha BMW e o laudo cautelar veio 100% aprovado. Me entregaram o carro polido, revisado e com tanque cheio. A Gaúcho Veículos virou minha loja de confiança!"
+  },
+  {
+    id: 2,
+    name: "Camila Silveira Fontoura",
+    city: "Caxias do Sul - RS",
+    car: "Comprou: Jeep Compass Limited",
+    rating: 5,
+    date: "Há 1 mês",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+    comment: "Avaliaram meu usado muito acima da média do mercado e aprovaram o financiamento em menos de 30 minutos pelo WhatsApp! Processo transparente, rápido e sem burocracia. Super recomendo!"
+  },
+  {
+    id: 3,
+    name: "Mateus Barcellos",
+    city: "Canoas - RS",
+    car: "Comprou: Toyota Hilux SRX",
+    rating: 5,
+    date: "Há 3 semanas",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    comment: "Peguei minha Hilux 0km com eles com taxa diferenciada. O suporte pós-venda deles é o grande diferencial, sempre solícitos. Parabéns a toda equipe da Gaúcho Veículos."
+  }
+];
+
+const STORE_CONFIG = {
+  name: "Gaúcho Veículos",
+  slogan: "Tradição, Confiança e as Melhores Ofertas em Novos e Seminovos",
+  phone: "(51) 3344-8800",
+  whatsapp: "5551999998888", // DDI + DDD + Numero
+  address: "Av. das Américas, 4500 - Bairro Ipiranga, Porto Alegre - RS",
+  hours: "Seg a Sex: 08:30 às 19:00 | Sáb: 09:00 às 17:00",
+  email: "contato@gauchoveiculos.com.br",
+  cnpj: "12.345.678/0001-90"
+};
