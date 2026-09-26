@@ -1,74 +1,68 @@
-# 🚗 Gaúcho Veículos - Landing Page de Alta Conversão
+# 🚗 Gaúcho Veículos - Solução Web & Mobile (Flutter)
 
-Landing page profissional, responsiva e de alta performance para concessionária e revenda de automóveis novos (0km) e seminovos certificados.
+Solução completa para concessionária e revenda de automóveis novos (0km) e seminovos certificados, contendo **Landing Page Web de Alta Conversão** e **Aplicativo Mobile Multiplataforma (Flutter)**.
 
-Desenvolvida com foco em **alta conversão**, **UI/UX moderna (Automotive Dark Carbon)**, **totalmente client-side** (HTML5, CSS3 e JavaScript Vanilla), sem dependência de banco de dados e com integração direta para captação de leads via WhatsApp.
-
----
-
-## ✨ Principais Funcionalidades
-
-- 🏎️ **Inventário Dinâmico (0km e Seminovos):** Catálogo interativo com 12 modelos em destaque (Toyota Hilux, BMW 320i, Jeep Compass, BYD Song Plus, Porsche Macan, etc.).
-- 🔍 **Mecanismo de Busca e Filtros em Tempo Real:**
-  - Filtro por Tipo: *Todos*, *Novos 0km*, *Seminovos Certificados*.
-  - Filtro por Categoria: *SUVs*, *Picapes 4x4*, *Sedans*, *Hatches*, *Híbridos/Elétricos*, *Esportivos*.
-  - Filtro por Marca e Faixa de Preço.
-  - Ordenação por Menor Preço, Maior Preço, Ano mais Novo e Destaques.
-- 🧮 **Simulador Interativo de Financiamento:**
-  - Sliders em tempo real para Valor do Veículo, Entrada (com cálculo dinâmico de percentual) e Prazo (12x a 60x).
-  - Cálculo de parcelas baseado na Tabela Price com taxas médias automotivas.
-  - Botão de envio instantâneo com a proposta formatada direto no WhatsApp do consultor.
-- 📑 **Modal de Ficha Técnica e Galeria de Fotos:**
-  - Visualização com troca de fotos (lightbox de miniaturas).
-  - Especificações detalhadas (motor, câmbio, combustível, cor, opcionais e laudo).
-- ❤️ **Sistema de Favoritos (LocalStorage):**
-  - Permite salvar veículos para comparar depois, sem perder o histórico ao recarregar a página.
-  - Contador interativo no cabeçalho e modal exclusivo de favoritos.
-- 🔄 **Formulário de Avaliação de Usado (Trade-In / Troca com Troco):**
-  - Captura dados do veículo do cliente e gera mensagem personalizada para o time comercial.
-- 💬 **Geração de Leads no WhatsApp:**
-  - Todos os botões "Negociar" e "Simular" geram mensagens personalizadas com o modelo, preço e dados do cliente.
-  - Botão flutuante de WhatsApp com animação de pulso.
-- ⭐ **Depoimentos Reais & Diferenciais:**
-  - Seções de prova social e diferenciais (Laudo Cautelar 100%, Garantia de até 1 ano, Entrega em todo o Brasil).
+Desenvolvida com a paleta **Automotive Dark Carbon & Azul Turquesa (Cyber Turquoise)**, sem dependência de banco de dados e com captação direta de leads via WhatsApp.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 📱 1. Aplicativo Mobile (Flutter)
 
-- **HTML5 Semântico:** Estruturação limpa, tags acessíveis (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-- **CSS3 Moderno:**
-  - Variáveis CSS (Custom Properties) para consistência visual.
-  - CSS Grid e Flexbox para layouts fluidos e responsivos.
-  - Efeitos de Glassmorphism (`backdrop-filter`) e paleta Carbon/Dark Red/Gold.
-  - Tipografia via Google Fonts (*Outfit* e *Plus Jakarta Sans*).
-- **JavaScript (ES6+ Vanilla):**
-  - Manipulação de DOM limpa e modular.
-  - Gerenciamento de estado em memória.
-  - LocalStorage para persistência de favoritos.
-  - Formatação monetária com `Intl.NumberFormat`.
-- **Font Awesome 6:** Biblioteca de ícones vetoriais modernos via CDN.
+O aplicativo mobile foi desenvolvido em **Flutter** e se encontra na pasta [`mobile_app/`](mobile_app/):
 
----
+### ✨ Recursos do App Mobile:
+- 🏎️ **Catálogo Dinâmico:** Listagem com 12 modelos (Toyota Hilux, BMW 320i, Jeep Compass, BYD Song Plus, Porsche Macan, etc.).
+- 🔍 **Busca e Filtros Avançados:** Filtro por 0km/Seminovos, Categorias (SUVs, Picapes, Sedans, Hatches, Elétricos, Esportivos), Marcas e Faixa de Preço.
+- 🧮 **Simulador de Financiamento:** Sliders em tempo real para Valor, Entrada e Prazo (12x a 60x), cálculo de parcelas e envio da proposta para o WhatsApp.
+- 📑 **Ficha Técnica & Galeria:** Carrossel de fotos, especificações mecânicas detalhadas e lista de opcionais com checkmarks.
+- ❤️ **Favoritos:** Salve veículos com botão de coração e visualize-os na aba de favoritos.
+- 🔄 **Avaliação de Usado (Trade-In):** Formulário integrado para avaliação do veículo usado direto no WhatsApp do time comercial.
+- 🎨 **UI Premium:** Design moderno com Material 3 Dark Theme e fontes *Outfit* e *Plus Jakarta Sans*.
 
-## 📁 Estrutura de Arquivos
-
-```text
-c:\Users\Estremote\Desktop\Gaucho Veiculos\
-├── index.html        # Estrutura principal da Landing Page
-├── css\
-│   └── style.css     # Folha de estilos completa e responsiva
-├── js\
-│   ├── data.js       # Base de dados estruturada de veículos e depoimentos
-│   └── app.js        # Lógica de filtros, simulador, modal e eventos
-└── README.md         # Documentação do projeto
+### 🚀 Como Executar o App Mobile:
+```bash
+cd mobile_app
+flutter pub get
+flutter run
 ```
 
 ---
 
-## 🚀 Como Executar Localmente
+## 🌐 2. Landing Page Web (HTML5 / CSS3 / JS)
 
-Não requer instalação de pacotes (npm/node) nem servidor de banco de dados.
+A versão web é 100% client-side e está na raiz do projeto:
 
-1. Basta abrir o arquivo `index.html` em qualquer navegador web (Google Chrome, Microsoft Edge, Firefox, Safari).
-2. Ou utilize a extensão **Live Server** do VS Code para recarregamento automático durante edições.
+- [`index.html`](index.html): Estrutura semântica e acessível.
+- [`css/style.css`](css/style.css): Estilos modernos, responsivos e tema Azul Turquesa.
+- [`js/data.js`](js/data.js): Base de dados estruturada de veículos e depoimentos.
+- [`js/app.js`](js/app.js): Lógica de filtros, simulador de parcelas, favoritos em LocalStorage e modais.
+
+### 🚀 Como Executar a Web:
+Abra o arquivo [`index.html`](index.html) diretamente em qualquer navegador web.
+
+---
+
+## 📁 Estrutura do Repositório
+
+```text
+c:\Users\Estremote\Desktop\Gaucho Veiculos\
+├── index.html                  # Landing Page Web
+├── css/style.css               # Estilos Web (Azul Turquesa & Dark Carbon)
+├── js/
+│   ├── data.js                 # Dados mockados dos veículos
+│   └── app.js                  # Lógica Web
+├── mobile_app/                 # 📱 PROJETO FLUTTER COMPLETO
+│   ├── pubspec.yaml
+│   ├── lib/
+│   │   ├── main.dart           # Ponto de entrada do App
+│   │   ├── core/
+│   │   │   ├── theme.dart      # Tema Escuro & Azul Turquesa
+│   │   │   └── constants.dart  # Formatações, WhatsApp e utilitários
+│   │   ├── models/             # Modelos de dados
+│   │   ├── data/               # Mock data dos carros e depoimentos
+│   │   ├── providers/          # Gerenciamento de estado reativo
+│   │   ├── widgets/            # Cards, chips, barra de busca e simulador
+│   │   └── screens/            # Telas do aplicativo
+│   └── test/widget_test.dart   # Testes automatizados
+└── README.md
+```
