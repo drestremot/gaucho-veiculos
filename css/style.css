@@ -1,23 +1,24 @@
 /* ==========================================================================
    GAÚCHO VEÍCULOS - ESTILOS PRINCIPAIS (CSS3 MODERNO)
-   Desenvolvido com foco em alta conversão, responsividade e estética premium.
+   Tema: Automotive Dark Carbon & Azul Turquesa (Cyber Turquoise)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* --- VARIÁVEIS DO TEMA --- */
 :root {
-  /* Cores Principais */
-  --bg-dark: #090c10;
-  --bg-body: #0d1117;
-  --bg-surface: #161b22;
-  --bg-surface-elevated: #1f242d;
-  --bg-surface-glass: rgba(22, 27, 34, 0.85);
+  /* Cores Principais - Azul Turquesa / Cyan */
+  --bg-dark: #070a0e;
+  --bg-body: #0b0f15;
+  --bg-surface: #131922;
+  --bg-surface-elevated: #1a222e;
+  --bg-surface-glass: rgba(19, 25, 34, 0.88);
   
-  --primary: #e63946;
-  --primary-hover: #ff4d5e;
-  --primary-glow: rgba(230, 57, 70, 0.35);
-  --primary-subtle: rgba(230, 57, 70, 0.12);
+  --primary: #06b6d4;          /* Azul Turquesa Vibrante */
+  --primary-hover: #22d3ee;    /* Turquesa Claro / Brilhante */
+  --primary-dark: #0891b2;     /* Turquesa Profundo */
+  --primary-glow: rgba(6, 182, 212, 0.38);
+  --primary-subtle: rgba(6, 182, 212, 0.12);
 
   --accent-gold: #f59e0b;
   --accent-gold-glow: rgba(245, 158, 11, 0.25);
@@ -29,11 +30,11 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-inverse: #090c10;
+  --text-inverse: #070a0e;
 
   /* Bordas e Sombras */
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(230, 57, 70, 0.5);
+  --border-focus: rgba(6, 182, 212, 0.5);
   --border-glass: rgba(255, 255, 255, 0.12);
   
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -116,7 +117,7 @@ ul {
 
 /* --- UTILITÁRIOS & TYPOGRAPHY --- */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, #e63946 100%);
+  background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -139,7 +140,7 @@ ul {
   gap: 0.5rem;
   padding: 0.35rem 1rem;
   background: var(--primary-subtle);
-  border: 1px solid rgba(230, 57, 70, 0.3);
+  border: 1px solid rgba(6, 182, 212, 0.3);
   border-radius: var(--radius-full);
   color: var(--primary-hover);
   font-size: 0.85rem;
@@ -177,14 +178,14 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #c1121f);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #ffffff;
   box-shadow: 0 4px 15px var(--primary-glow);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--primary-hover), var(--primary));
-  box-shadow: 0 6px 22px rgba(230, 57, 70, 0.6);
+  box-shadow: 0 6px 24px rgba(6, 182, 212, 0.6);
   transform: translateY(-2px);
 }
 
@@ -209,7 +210,8 @@ ul {
 
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(6, 182, 212, 0.4);
+  color: var(--primary-hover);
   transform: translateY(-2px);
 }
 
@@ -276,7 +278,7 @@ ul {
 }
 
 .navbar.scrolled {
-  background: rgba(13, 17, 23, 0.95);
+  background: rgba(11, 15, 21, 0.95);
   box-shadow: var(--shadow-md);
 }
 
@@ -300,14 +302,14 @@ ul {
 .brand-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, var(--primary), #800f2f);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
   color: #ffffff;
-  box-shadow: 0 4px 12px var(--primary-glow);
+  box-shadow: 0 4px 14px var(--primary-glow);
 }
 
 .brand-name span {
@@ -369,7 +371,7 @@ ul {
 }
 
 .btn-favorites:hover {
-  background: rgba(230, 57, 70, 0.15);
+  background: var(--primary-subtle);
   border-color: var(--primary);
   color: var(--primary);
 }
@@ -379,7 +381,7 @@ ul {
   top: -4px;
   right: -4px;
   background: var(--primary);
-  color: #fff;
+  color: var(--text-inverse);
   font-size: 0.7rem;
   font-weight: 800;
   width: 19px;
@@ -404,8 +406,8 @@ ul {
   position: relative;
   padding: 4.5rem 0 5.5rem;
   overflow: hidden;
-  background: radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.15) 0%, rgba(13, 17, 23, 0) 60%),
-              radial-gradient(circle at 10% 80%, rgba(245, 158, 11, 0.08) 0%, rgba(13, 17, 23, 0) 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.16) 0%, rgba(11, 15, 21, 0) 60%),
+              radial-gradient(circle at 10% 80%, rgba(245, 158, 11, 0.08) 0%, rgba(11, 15, 21, 0) 50%);
 }
 
 .hero::before {
@@ -435,13 +437,13 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(230, 57, 70, 0.12);
-  border: 1px solid rgba(230, 57, 70, 0.3);
+  background: var(--primary-subtle);
+  border: 1px solid rgba(6, 182, 212, 0.3);
   padding: 0.4rem 1.1rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ff6b7a;
+  color: var(--primary-hover);
   margin-bottom: 1.5rem;
 }
 
@@ -517,7 +519,7 @@ ul {
 
 .hero-card-featured:hover {
   transform: translateY(-4px);
-  border-color: rgba(230, 57, 70, 0.4);
+  border-color: rgba(6, 182, 212, 0.4);
 }
 
 .hero-card-image-wrap {
@@ -541,7 +543,7 @@ ul {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: linear-gradient(135deg, var(--primary), #a71d2a);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #ffffff;
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
@@ -602,7 +604,7 @@ ul {
   position: absolute;
   bottom: -20px;
   left: -20px;
-  background: rgba(22, 27, 34, 0.95);
+  background: rgba(19, 25, 34, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-glass);
   padding: 0.85rem 1.25rem;
@@ -671,7 +673,7 @@ ul {
 
 .search-tab-btn.active, .search-tab-btn:hover {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text-inverse);
 }
 
 .quick-search-form {
@@ -749,7 +751,7 @@ select.form-control option {
 }
 
 .category-pill:hover, .category-pill.active {
-  background: rgba(230, 57, 70, 0.15);
+  background: var(--primary-subtle);
   border-color: var(--primary);
   color: #ffffff;
   transform: translateY(-2px);
@@ -821,8 +823,8 @@ select.form-control option {
 
 .car-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(230, 57, 70, 0.4);
-  box-shadow: var(--shadow-lg), 0 0 25px rgba(230, 57, 70, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(6, 182, 212, 0.18);
 }
 
 .car-card-header {
@@ -854,7 +856,7 @@ select.form-control option {
 }
 
 .badge-tag {
-  background: rgba(13, 17, 23, 0.85);
+  background: rgba(11, 15, 21, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-glass);
   color: #ffffff;
@@ -866,6 +868,7 @@ select.form-control option {
 
 .badge-tag.highlight {
   background: var(--primary);
+  color: var(--text-inverse);
   border-color: var(--primary-hover);
 }
 
@@ -881,7 +884,7 @@ select.form-control option {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(13, 17, 23, 0.75);
+  background: rgba(11, 15, 21, 0.75);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-glass);
   color: #ffffff;
@@ -894,8 +897,8 @@ select.form-control option {
 }
 
 .btn-card-fav:hover, .btn-card-fav.active {
-  background: rgba(230, 57, 70, 0.9);
-  color: #ffffff;
+  background: rgba(6, 182, 212, 0.95);
+  color: #070a0e;
   transform: scale(1.1);
 }
 
@@ -921,7 +924,7 @@ select.form-control option {
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--primary-hover);
+  color: var(--primary);
   letter-spacing: 0.05em;
 }
 
@@ -1033,7 +1036,7 @@ select.form-control option {
 /* --- SIMULADOR DE FINANCIAMENTO --- */
 .simulator-section {
   padding: 6rem 0;
-  background: linear-gradient(180deg, var(--bg-body) 0%, #11161f 50%, var(--bg-body) 100%);
+  background: linear-gradient(180deg, var(--bg-body) 0%, #0e1520 50%, var(--bg-body) 100%);
   position: relative;
 }
 
@@ -1066,7 +1069,7 @@ select.form-control option {
   height: 42px;
   border-radius: var(--radius-sm);
   background: var(--primary-subtle);
-  border: 1px solid rgba(230, 57, 70, 0.3);
+  border: 1px solid rgba(6, 182, 212, 0.3);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -1141,7 +1144,7 @@ input[type="range"].sim-range::-webkit-slider-thumb {
   background: var(--primary);
   border: 3px solid #ffffff;
   cursor: pointer;
-  box-shadow: 0 0 10px var(--primary-glow);
+  box-shadow: 0 0 12px var(--primary-glow);
   transition: transform 0.1s ease;
 }
 
@@ -1170,7 +1173,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
 .sim-term-btn.active, .sim-term-btn:hover {
   background: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+  color: var(--text-inverse);
 }
 
 .sim-results-box {
@@ -1227,7 +1230,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
 }
 
 .tradein-card {
-  background: linear-gradient(135deg, rgba(31, 36, 45, 0.95), rgba(22, 27, 34, 0.95));
+  background: linear-gradient(135deg, rgba(26, 34, 46, 0.95), rgba(19, 25, 34, 0.95));
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   padding: 3rem;
@@ -1314,7 +1317,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
 
 .why-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(230, 57, 70, 0.4);
+  border-color: rgba(6, 182, 212, 0.4);
   box-shadow: var(--shadow-md);
 }
 
@@ -1323,7 +1326,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
   height: 65px;
   border-radius: 50%;
   background: var(--primary-subtle);
-  border: 1px solid rgba(230, 57, 70, 0.3);
+  border: 1px solid rgba(6, 182, 212, 0.3);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -1472,6 +1475,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
 
 .modal-close-btn:hover {
   background: var(--primary);
+  color: var(--text-inverse);
   transform: rotate(90deg);
 }
 
@@ -1688,7 +1692,7 @@ input[type="range"].sim-range::-webkit-slider-thumb:hover {
 
 .social-btn:hover {
   background: var(--primary);
-  color: #fff;
+  color: var(--text-inverse);
   transform: translateY(-3px);
 }
 
